@@ -69,16 +69,18 @@ if (config) {
     });
   }
 
-  let terms = document.querySelector('.terms_conditions');
-  terms.addEventListener('change', function () {
-    if (this.checked) {
-      document.getElementById('register_btn').removeAttribute('disabled');
-    } else {
-      document
-        .getElementById('register_btn')
-        .setAttribute('disabled', 'disabled');
-    }
-  });
+  if (document.querySelector('.terms_conditions') !== null) {
+    let terms = document.querySelector('.terms_conditions');
+    terms.addEventListener('change', function () {
+      if (this.checked) {
+        document.getElementById('register_btn').removeAttribute('disabled');
+      } else {
+        document
+          .getElementById('register_btn')
+          .setAttribute('disabled', 'disabled');
+      }
+    });
+  }
 
   var coderesult;
   var number = null;
